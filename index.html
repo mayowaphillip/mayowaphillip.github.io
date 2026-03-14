@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mayowa Phillip — Data Analyst</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <img src="images/logo.svg" alt="MP Logo" class="logo-img" onerror="this.style.display='none'; document.querySelector('.logo-text').style.display='block'"/>
+      <span class="logo-text">MP<span class="accent">.</span></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="about">
+    <div class="hero-grid-overlay"></div>
+    <div class="scanline"></div>
+    <div class="hero-content">
+      <div class="hero-tag"><span class="dot pulse"></span> Available for hire</div>
+      <h1 class="hero-name">Mayowa<br><span class="accent">Phillip</span></h1>
+      <p class="hero-tagline">From messy datasets to meaningful dashboards —<br>I make data speak.</p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num" data-target="30">0</span><span class="stat-label">Projects</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num" data-target="5">0</span><span class="stat-label">Years Exp.</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num" data-target="12">0</span><span class="stat-label">Tools Mastered</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="chart-container">
+        <div class="chart-bars">
+          <div class="bar" style="--h:45%; --delay:0.1s"></div>
+          <div class="bar" style="--h:70%; --delay:0.2s"></div>
+          <div class="bar" style="--h:55%; --delay:0.3s"></div>
+          <div class="bar" style="--h:88%; --delay:0.4s"></div>
+          <div class="bar" style="--h:62%; --delay:0.5s"></div>
+          <div class="bar" style="--h:95%; --delay:0.6s"></div>
+          <div class="bar" style="--h:74%; --delay:0.7s"></div>
+          <div class="bar" style="--h:50%; --delay:0.8s"></div>
+        </div>
+        <svg class="chart-line" viewBox="0 0 300 150" preserveAspectRatio="none">
+          <polyline class="line-path" points="0,120 40,90 80,100 120,55 160,75 200,30 240,50 300,20"/>
+          <polyline class="line-fill" points="0,150 0,120 40,90 80,100 120,55 160,75 200,30 240,50 300,20 300,150"/>
+        </svg>
+        <div class="chart-label">Revenue Trend <span class="trend-badge">+24.7%</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT STRIP -->
+  <section class="about-strip">
+    <div class="container">
+      <div class="about-text">
+        <div class="section-eyebrow">About Me</div>
+        <h2>Turning raw numbers into <span class="accent">real decisions</span></h2>
+        <p>I'm a Data Analyst passionate about turning raw data into actionable insights. I'm skilled in data cleaning, visualization, and storytelling — bridging the gap between complex datasets and the people who need to act on them.</p>
+        <ul class="about-list">
+          <li><span class="list-dot"></span>Experienced with Python, SQL, Excel, Power BI, and Tableau</li>
+          <li><span class="list-dot"></span>Enthusiastic about machine learning applications in business intelligence</li>
+          <li><span class="list-dot"></span>Focused on solving real-world problems with data-driven solutions</li>
+        </ul>
+        <a href="images/Mayowa_Phillip_CV.pdf" class="btn btn-primary" download>Download CV</a>
+      </div>
+      <div class="about-photo">
+        <div class="photo-frame">
+          <img src="images/profile.jpg" alt="Mayowa Phillip" onerror="this.parentElement.classList.add('no-photo')"/>
+          <div class="photo-placeholder">MP</div>
+        </div>
+        <div class="about-badges">
+          <span class="badge">Python</span>
+          <span class="badge">SQL</span>
+          <span class="badge">Power BI</span>
+          <span class="badge">Tableau</span>
+          <span class="badge">Excel</span>
+          <span class="badge">Scikit-learn</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="skills" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Toolkit</div>
+        <h2>Skills &amp; <span class="accent">Technologies</span></h2>
+      </div>
+      <div class="skills-grid">
+
+        <div class="skill-card">
+          <div class="skill-icon">🐍</div>
+          <h3>Programming</h3>
+          <p>Writing clean, efficient scripts for data processing, analysis, and statistical modelling — from quick explorations to full pipelines.</p>
+          <div class="skill-tags"><span>Python</span><span>R</span><span>SQL</span></div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">📊</div>
+          <h3>Data Visualization</h3>
+          <p>Building interactive dashboards and clear charts that communicate insights to both technical and non-technical stakeholders.</p>
+          <div class="skill-tags"><span>Power BI</span><span>Tableau</span><span>Matplotlib</span><span>Seaborn</span></div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">⚡</div>
+          <h3>Data Wrangling</h3>
+          <p>Cleaning, transforming, and reshaping messy real-world datasets to make them ready for meaningful analysis.</p>
+          <div class="skill-tags"><span>Pandas</span><span>Excel</span><span>Power Query</span></div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">🗄️</div>
+          <h3>Database & SQL</h3>
+          <p>Writing optimised queries to extract business insights from relational databases — from simple lookups to complex multi-table joins.</p>
+          <div class="skill-tags"><span>SQL</span><span>Adventure Works</span><span>PivotTables</span></div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">🤖</div>
+          <h3>Machine Learning</h3>
+          <p>Applying ML techniques to business problems — from predictive modelling to understanding patterns in large datasets.</p>
+          <div class="skill-tags"><span>Scikit-learn</span><span>TensorFlow</span><span>Regression</span><span>Clustering</span></div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">📋</div>
+          <h3>Business Intelligence</h3>
+          <p>Delivering end-to-end BI solutions: from raw data to polished dashboards that drive strategic decisions for HR and business stakeholders.</p>
+          <div class="skill-tags"><span>Power BI</span><span>DAX</span><span>KPI Reporting</span><span>Excel</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Work</div>
+        <h2>Featured <span class="accent">Projects</span></h2>
+      </div>
+      <div class="projects-grid">
+
+        <article class="project-card featured">
+          <div class="project-img">
+            <img src="images/projects/project1.png" alt="911 Calls Analysis" onerror="this.parentElement.classList.add('no-img')"/>
+            <div class="project-img-placeholder">🚨</div>
+            <div class="project-overlay">
+              <a href="#" class="btn btn-sm">View Project</a>
+              <a href="#" class="btn btn-sm btn-ghost">GitHub</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags"><span>Python</span><span>Pandas</span><span>Matplotlib</span></div>
+            <h3>911 Calls Analysis</h3>
+            <p>Explored emergency call data to uncover trends and response patterns. Identified peak call times and geographic hotspots — delivering actionable insights for better resource allocation across emergency services.</p>
+            <div class="project-outcome"><span class="outcome-label">Outcome:</span> Mapped peak hours &amp; geographic hotspots for optimised dispatch</div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-img">
+            <img src="images/projects/project2.png" alt="Professional Trend Dashboard" onerror="this.parentElement.classList.add('no-img')"/>
+            <div class="project-img-placeholder">👥</div>
+            <div class="project-overlay">
+              <a href="#" class="btn btn-sm">View Project</a>
+              <a href="#" class="btn btn-sm btn-ghost">GitHub</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags"><span>Power BI</span><span>DAX</span><span>Power Query</span></div>
+            <h3>Professional Trend for Business &amp; HR</h3>
+            <p>Applied cleaning and transformation techniques in Power BI to deliver dashboards highlighting workforce trends and business performance for HR and executive stakeholders.</p>
+            <div class="project-outcome"><span class="outcome-label">Outcome:</span> Dashboards surfacing workforce &amp; business performance trends</div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-img">
+            <img src="images/projects/project3.png" alt="Superstore Database" onerror="this.parentElement.classList.add('no-img')"/>
+            <div class="project-img-placeholder">🛒</div>
+            <div class="project-overlay">
+              <a href="#" class="btn btn-sm">View Project</a>
+              <a href="#" class="btn btn-sm btn-ghost">GitHub</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags"><span>Excel</span><span>PivotTables</span><span>Charts</span></div>
+            <h3>Superstore Database</h3>
+            <p>Analysed retail sales and profitability using Excel PivotTables and charts. Provided deep insights into product categories, regional sales performance, and customer purchasing behaviour.</p>
+            <div class="project-outcome"><span class="outcome-label">Outcome:</span> Insights into products, regions &amp; customer behaviour</div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-img">
+            <img src="images/projects/project4.png" alt="Adventure Works Queries" onerror="this.parentElement.classList.add('no-img')"/>
+            <div class="project-img-placeholder">⚙️</div>
+            <div class="project-overlay">
+              <a href="#" class="btn btn-sm">View Project</a>
+              <a href="#" class="btn btn-sm btn-ghost">GitHub</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags"><span>SQL</span><span>Adventure Works</span><span>Business Analytics</span></div>
+            <h3>Adventure Works Queries</h3>
+            <p>Wrote SQL queries to extract insights from the Adventure Works database, answering business questions on product performance, customer orders, and revenue streams.</p>
+            <div class="project-outcome"><span class="outcome-label">Outcome:</span> Business answers on products, orders &amp; revenue</div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Say Hello</div>
+        <h2>Let's <span class="accent">Work Together</span></h2>
+        <p class="section-sub">Have a dataset that needs taming? A dashboard that needs building? Let's talk.</p>
+      </div>
+      <div class="contact-grid">
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="your@email.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" placeholder="What's this about?" />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Send Message →</button>
+          <div class="form-status" id="formStatus"></div>
+        </form>
+        <div class="contact-info">
+          <div class="contact-card">
+            <span class="contact-icon">📧</span>
+            <div>
+              <div class="contact-label">Email</div>
+              <a href="mailto:mayowa@example.com">mayowa@example.com</a>
+            </div>
+          </div>
+          <div class="contact-card">
+            <span class="contact-icon">💼</span>
+            <div>
+              <div class="contact-label">LinkedIn</div>
+              <a href="https://linkedin.com/in/mayowaphillip" target="_blank">linkedin.com/in/mayowaphillip</a>
+            </div>
+          </div>
+          <div class="contact-card">
+            <span class="contact-icon">🐙</span>
+            <div>
+              <div class="contact-label">GitHub</div>
+              <a href="https://github.com/mayowaphillip" target="_blank">github.com/mayowaphillip</a>
+            </div>
+          </div>
+          <div class="contact-card">
+            <span class="contact-icon">📍</span>
+            <div>
+              <div class="contact-label">Location</div>
+              <span>Nigeria (Open to Remote)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <span class="logo-text">MP<span class="accent">.</span></span>
+      <p>© 2025 Mayowa Phillip. Built with passion &amp; data.</p>
+      <div class="footer-links">
+        <a href="https://linkedin.com/in/mayowaphillip" target="_blank">LinkedIn</a>
+        <a href="https://github.com/mayowaphillip" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
