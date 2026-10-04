@@ -7,6 +7,21 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* About badges — match .btn-ghost hover behaviour */
+    .about-badges .badge {
+      display: inline-block;
+      cursor: default;
+      transition: color 0.3s ease, border-color 0.3s ease, background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    }
+    .about-badges .badge:hover {
+      color: var(--accent, #00d4ff);
+      border-color: var(--accent, #00d4ff);
+      background: transparent;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0, 212, 255, 0.25);
+    }
+  </style>
 </head>
 <body>
 
@@ -209,8 +224,8 @@
           <div class="project-body">
             <div class="project-tags"><span>Power BI</span><span>DAX</span><span>Power Query</span></div>
             <h3>Superstore Sales Dashboard</h3>
-            <p>Designed an interactive Power BI dashboard analysing retail sales and profitability across product categories, regions, and customer segments — with dynamic filtering and DAX measures for real-time KPI tracking.</p>
-            <div class="project-outcome"><span class="outcome-label">Outcome:</span> Insights into products, regions &amp; customer behaviour via interactive BI</div>
+            <p>A 6-page Power BI dashboard analysing $2.3M in retail sales across customer segments, product categories, and regions. Uncovered that Tables and Bookcases carry negative profit margins despite strong sales, and identified loss-making orders totalling -$30,704 — driving targeted margin recovery recommendations.</p>
+            <div class="project-outcome"><span class="outcome-label">Outcome:</span> Exposed hidden profit drains across products &amp; orders to guide pricing strategy</div>
           </div>
         </article>
 
@@ -238,7 +253,6 @@
             <div class="project-overlay">
               <a href="https://github.com/mayowaphillip/hr-intelligence-dashboard" target="_blank" class="btn btn-sm">View Project</a>
               <a href="https://github.com/mayowaphillip/hr-intelligence-dashboard" target="_blank" class="btn btn-sm btn-ghost">GitHub</a>
-
             </div>
           </div>
           <div class="project-body">
