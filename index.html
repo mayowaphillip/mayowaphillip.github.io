@@ -217,8 +217,8 @@
             <img src="images/projects/project3.png" alt="Superstore Sales Dashboard" onerror="this.parentElement.classList.add('no-img')"/>
             <div class="project-img-placeholder">🛒</div>
             <div class="project-overlay">
-              <a href="#" class="btn btn-sm">View Project</a>
-              <a href="#" class="btn btn-sm btn-ghost">GitHub</a>
+              <a href="https://github.com/mayowaphillip/superstore-sales-dashboard" target="_blank" class="btn btn-sm">View Project</a>
+              <a href="https://github.com/mayowaphillip/superstore-sales-dashboard" target="_blank" class="btn btn-sm btn-ghost">GitHub</a>
             </div>
           </div>
           <div class="project-body">
@@ -260,6 +260,23 @@
             <h3>HR Intelligence Dashboard</h3>
             <p>A 6-page Power BI dashboard analysing employee attrition and workforce trends across 1,470 employees. Covers performance, compensation, engagement, training, and a dedicated attrition deep dive — revealing that overtime workers are 3× more likely to leave and Sales Representatives face a 40% attrition rate.</p>
             <div class="project-outcome"><span class="outcome-label">Outcome:</span> Pinpointed attrition drivers across role, overtime &amp; tenure to guide HR decisions</div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-img">
+            <img src="images/projects/project6.png" alt="Global Mortality Intelligence Dashboard" onerror="this.parentElement.classList.add('no-img')"/>
+            <div class="project-img-placeholder">🌍</div>
+            <div class="project-overlay">
+              <a href="#" class="btn btn-sm">View Project</a>
+              <a href="#" class="btn btn-sm btn-ghost">GitHub</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags"><span>Power BI</span><span>DAX</span><span>WHO Data</span></div>
+            <h3>Global Mortality Intelligence Dashboard</h3>
+            <p>An 8-page Power BI intelligence solution analysing WHO mortality data across 185 countries, 179 causes of death, and 22 years (2000–2021). Covers cause rankings, country benchmarking, gender mortality inequality, population vs. rate analysis, and data quality transparency — revealing that cardiovascular disease leads globally and Eastern Europe dominates the highest mortality rankings.</p>
+            <div class="project-outcome"><span class="outcome-label">Outcome:</span> Converted raw WHO data into a policy-grade global health intelligence tool</div>
           </div>
         </article>
 
@@ -336,7 +353,7 @@
   <footer class="footer">
     <div class="container">
       <span class="logo-text">MP<span class="accent">.</span></span>
-      <p>© 2025 Mayowa Phillip. Built with passion &amp; data.</p>
+      <p>© 2026 Mayowa Phillip. Built with passion &amp; data.</p>
       <div class="footer-links">
         <a href="https://linkedin.com/in/mayowaphillip" target="_blank">LinkedIn</a>
         <a href="https://github.com/mayowaphillip" target="_blank">GitHub</a>
@@ -345,5 +362,92 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    // ── Mobile nav toggle (self-contained fallback) ──────────────────────────
+    (function () {
+      const toggle = document.getElementById('navToggle');
+      const navLinks = document.querySelector('.nav-links');
+
+      if (!toggle || !navLinks) return;
+
+      // Open / close on hamburger click
+      toggle.addEventListener('click', function (e) {
+        e.stopPropagation();
+        const isOpen = navLinks.classList.toggle('nav-open');
+        toggle.classList.toggle('active', isOpen);
+        toggle.setAttribute('aria-expanded', isOpen);
+      });
+
+      // Close when a nav link is tapped
+      navLinks.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          navLinks.classList.remove('nav-open');
+          toggle.classList.remove('active');
+          toggle.setAttribute('aria-expanded', false);
+        });
+      });
+
+      // Close when tapping anywhere outside the nav
+      document.addEventListener('click', function (e) {
+        if (!navLinks.contains(e.target) && e.target !== toggle) {
+          navLinks.classList.remove('nav-open');
+          toggle.classList.remove('active');
+          toggle.setAttribute('aria-expanded', false);
+        }
+      });
+    })();
+
+    // ── Navbar scroll shadow ─────────────────────────────────────────────────
+    window.addEventListener('scroll', function () {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // ── Stat counter animation ───────────────────────────────────────────────
+    document.querySelectorAll('.stat-num').forEach(function (el) {
+      const target = +el.getAttribute('data-target');
+      let count = 0;
+      const step = Math.ceil(target / 40);
+      const timer = setInterval(function () {
+        count = Math.min(count + step, target);
+        el.textContent = count;
+        if (count >= target) clearInterval(timer);
+      }, 40);
+    });
+  </script>
+
+  <style>
+    /* ── Mobile nav open state ─────────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg-secondary, #0d1117);
+        padding: 1.5rem 2rem;
+        gap: 1.2rem;
+        border-top: 1px solid rgba(255,255,255,0.08);
+        z-index: 999;
+      }
+      .nav-links.nav-open {
+        display: flex;
+      }
+      /* Animate hamburger → X */
+      .nav-toggle.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+      .nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+      }
+      .nav-toggle.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+      .nav-toggle span {
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+    }
+  </style>
 </body>
 </html>
