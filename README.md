@@ -9,7 +9,7 @@ This site highlights my projects, skills, and contributions in the field of anal
 
 ## 🚀 About Me
 - Skilled in **data cleaning, visualization, and storytelling**
-- Experienced with **Python, SQL, Excel, Power BI, and Tableau**
+- Experienced with **Python, SQL, Excel and Power BI**
 - Enthusiastic about **machine learning applications in business intelligence**
 - Focused on solving real-world problems with data-driven solutions
 
@@ -38,8 +38,8 @@ This site highlights my projects, skills, and contributions in the field of anal
 ---
 
 ## 🛠️ Skills
-- **Programming:** Python, R, SQL  
-- **Visualization:** Power BI, Tableau, Matplotlib, Seaborn  
+- **Programming:** Python, SQL  
+- **Visualization:** Power BI, Matplotlib, Seaborn  
 - **Data Wrangling:** Pandas, Excel  
 - **Machine Learning:** Scikit-learn, TensorFlow (basics)  
 
