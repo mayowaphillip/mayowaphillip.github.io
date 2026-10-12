@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
-    /* About badges — match .btn-ghost hover behaviour */
+    /* About badges hover */
     .about-badges .badge {
       display: inline-block;
       cursor: default;
@@ -20,6 +20,128 @@
       background: transparent;
       transform: translateY(-2px);
       box-shadow: 0 4px 15px rgba(0, 212, 255, 0.25);
+    }
+
+    /* PL-300 certification badge */
+    .cert-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      background: linear-gradient(135deg, rgba(0,120,212,0.15), rgba(0,188,242,0.10));
+      border: 1px solid rgba(0,120,212,0.55);
+      border-radius: 8px;
+      padding: 0.45rem 0.85rem;
+      margin-top: 1rem;
+      text-decoration: none;
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.2s;
+      width: fit-content;
+    }
+    .cert-badge:hover {
+      border-color: #0078d4;
+      box-shadow: 0 4px 18px rgba(0,120,212,0.35);
+      transform: translateY(-2px);
+    }
+    .cert-badge-logo {
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+    }
+    .cert-badge-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.25;
+    }
+    .cert-badge-text .cert-issuer {
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #0078d4;
+    }
+    .cert-badge-text .cert-name {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #e6f4ff;
+      white-space: nowrap;
+    }
+    .cert-badge-text .cert-sub {
+      font-size: 0.63rem;
+      color: rgba(200,220,255,0.7);
+      white-space: nowrap;
+    }
+
+    /* Hero cert badge — sits next to Available for hire */
+    .hero-tag-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.5rem;
+    }
+    .hero-cert {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: linear-gradient(135deg, rgba(0,120,212,0.18), rgba(0,188,242,0.12));
+      border: 1px solid rgba(0,120,212,0.6);
+      border-radius: 6px;
+      padding: 0.3rem 0.7rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: #60c8ff;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: box-shadow 0.3s, transform 0.2s;
+    }
+    .hero-cert:hover {
+      box-shadow: 0 3px 14px rgba(0,120,212,0.4);
+      transform: translateY(-1px);
+    }
+    .hero-cert svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
+    /* Project card button clarity */
+    .project-overlay {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .btn-sm-live {
+      background: var(--accent, #00d4ff);
+      color: #000;
+      border: none;
+      font-weight: 700;
+    }
+    .btn-sm-live:hover {
+      opacity: 0.85;
+    }
+
+    /* Mobile nav */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg-secondary, #0d1117);
+        padding: 1.5rem 2rem;
+        gap: 1.2rem;
+        border-top: 1px solid rgba(255,255,255,0.08);
+        z-index: 999;
+      }
+      .nav-links.nav-open { display: flex; }
+      .nav-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+      .nav-toggle.active span:nth-child(2) { opacity: 0; }
+      .nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+      .nav-toggle span { transition: transform 0.3s ease, opacity 0.3s ease; }
+      .hero-tag-row { gap: 0.6rem; }
     }
   </style>
 </head>
@@ -47,7 +169,23 @@
     <div class="hero-grid-overlay"></div>
     <div class="scanline"></div>
     <div class="hero-content">
-      <div class="hero-tag"><span class="dot pulse"></span> Available for hire</div>
+
+      <!-- Available for hire + PL-300 badge side by side -->
+      <div class="hero-tag-row">
+        <div class="hero-tag"><span class="dot pulse"></span> Available for hire</div>
+        <a href="https://learn.microsoft.com/en-us/credentials/certifications/power-bi-data-analyst-associate/"
+           target="_blank" class="hero-cert" title="Microsoft Certified: Power BI Data Analyst Associate (PL-300)">
+          <!-- Microsoft logo mark (4-square) -->
+          <svg viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0"  y="0"  width="10" height="10" fill="#f25022"/>
+            <rect x="11" y="0"  width="10" height="10" fill="#7fba00"/>
+            <rect x="0"  y="11" width="10" height="10" fill="#00a4ef"/>
+            <rect x="11" y="11" width="10" height="10" fill="#ffb900"/>
+          </svg>
+          PL-300 Certified
+        </a>
+      </div>
+
       <h1 class="hero-name">Mayowa<br><span class="accent">Phillip</span></h1>
       <p class="hero-tagline">From messy datasets to meaningful dashboards —<br>I make data speak.</p>
       <div class="hero-cta">
@@ -89,13 +227,30 @@
       <div class="about-text">
         <div class="section-eyebrow">About Me</div>
         <h2>Turning raw numbers into <span class="accent">real decisions</span></h2>
-        <p>I'm a Data Analyst passionate about turning raw data into actionable insights. I'm skilled in data cleaning, visualization, and storytelling — bridging the gap between complex datasets and the people who need to act on them.</p>
+        <p>I'm a Data Analyst and <strong>Microsoft Certified Power BI Data Analyst Associate (PL-300)</strong> passionate about turning raw data into actionable insights. I'm skilled in data cleaning, visualization, and storytelling — bridging the gap between complex datasets and the people who need to act on them.</p>
         <ul class="about-list">
           <li><span class="list-dot"></span>Experienced with Python, SQL, Excel, and Power BI</li>
           <li><span class="list-dot"></span>Enthusiastic about machine learning applications in business intelligence</li>
           <li><span class="list-dot"></span>Focused on solving real-world problems with data-driven solutions</li>
         </ul>
-        <a href="images/Mayowa_Phillip_CV.pdf" class="btn btn-primary" download>Download CV</a>
+        <div style="display:flex; gap:1rem; flex-wrap:wrap; align-items:center; margin-top:1.5rem;">
+          <a href="images/Mayowa_Phillip_CV.pdf" class="btn btn-primary" download>Download CV</a>
+          <!-- PL-300 cert badge in about section -->
+          <a href="https://learn.microsoft.com/en-us/credentials/certifications/power-bi-data-analyst-associate/"
+             target="_blank" class="cert-badge" title="Verify Microsoft PL-300 Certification">
+            <svg class="cert-badge-logo" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="0"  y="0"  width="10" height="10" fill="#f25022"/>
+              <rect x="11" y="0"  width="10" height="10" fill="#7fba00"/>
+              <rect x="0"  y="11" width="10" height="10" fill="#00a4ef"/>
+              <rect x="11" y="11" width="10" height="10" fill="#ffb900"/>
+            </svg>
+            <div class="cert-badge-text">
+              <span class="cert-issuer">Microsoft Certified</span>
+              <span class="cert-name">Power BI Data Analyst Associate</span>
+              <span class="cert-sub">Exam PL-300 · 2026</span>
+            </div>
+          </a>
+        </div>
       </div>
       <div class="about-photo">
         <div class="photo-frame">
@@ -108,6 +263,7 @@
           <span class="badge">Power BI</span>
           <span class="badge">Excel</span>
           <span class="badge">Scikit-learn</span>
+          <span class="badge">PL-300</span>
         </div>
       </div>
     </div>
@@ -145,7 +301,7 @@
 
         <div class="skill-card">
           <div class="skill-icon">🗄️</div>
-          <h3>Database & SQL</h3>
+          <h3>Database &amp; SQL</h3>
           <p>Writing optimised queries to extract business insights from relational databases — from simple lookups to complex multi-table joins.</p>
           <div class="skill-tags"><span>SQL</span><span>Adventure Works</span><span>PivotTables</span></div>
         </div>
@@ -177,13 +333,16 @@
       </div>
       <div class="projects-grid">
 
+        <!-- PROJECT 1: 911 Calls Analysis -->
         <article class="project-card featured">
           <div class="project-img">
             <img src="images/projects/project1.png" alt="911 Calls Analysis" onerror="this.parentElement.classList.add('no-img')"/>
             <div class="project-img-placeholder">🚨</div>
             <div class="project-overlay">
-              <a href="https://github.com/mayowaphillip/911-calls-analysis" target="_blank" class="btn btn-sm">View Project</a>
-              <a href="https://github.com/mayowaphillip/911-calls-analysis" target="_blank" class="btn btn-sm btn-ghost">GitHub</a>
+              <a href="https://github.com/mayowaphillip/911-calls-analysis" target="_blank" class="btn btn-sm"
+                 title="Open the live project notebook / report">🔗 Live Demo</a>
+              <a href="https://github.com/mayowaphillip/911-calls-analysis" target="_blank" class="btn btn-sm btn-ghost"
+                 title="View source code and README on GitHub">🐙 GitHub</a>
             </div>
           </div>
           <div class="project-body">
@@ -194,13 +353,16 @@
           </div>
         </article>
 
+        <!-- PROJECT 2: HR Analytics Dashboard -->
         <article class="project-card">
           <div class="project-img">
             <img src="images/projects/project2.png" alt="HR Analytics Dashboard" onerror="this.parentElement.classList.add('no-img')"/>
             <div class="project-img-placeholder">👥</div>
             <div class="project-overlay">
-              <a href="https://github.com/mayowaphillip/hr-analytics-dashboard" target="_blank" class="btn btn-sm">View Project</a>
-              <a href="https://github.com/mayowaphillip/hr-analytics-dashboard" target="_blank" class="btn btn-sm btn-ghost">GitHub</a>
+              <a href="https://github.com/mayowaphillip/hr-analytics-dashboard" target="_blank" class="btn btn-sm"
+                 title="View dashboard screenshots and full project write-up">📊 View Project</a>
+              <a href="https://github.com/mayowaphillip/hr-analytics-dashboard" target="_blank" class="btn btn-sm btn-ghost"
+                 title="View source files and README on GitHub">🐙 GitHub</a>
             </div>
           </div>
           <div class="project-body">
@@ -211,13 +373,16 @@
           </div>
         </article>
 
+        <!-- PROJECT 3: Superstore Sales Dashboard -->
         <article class="project-card">
           <div class="project-img">
             <img src="images/projects/project3.png" alt="Superstore Sales Dashboard" onerror="this.parentElement.classList.add('no-img')"/>
             <div class="project-img-placeholder">🛒</div>
             <div class="project-overlay">
-              <a href="https://github.com/mayowaphillip/superstore-sales-dashboard" target="_blank" class="btn btn-sm">View Project</a>
-              <a href="https://github.com/mayowaphillip/superstore-sales-dashboard" target="_blank" class="btn btn-sm btn-ghost">GitHub</a>
+              <a href="https://github.com/mayowaphillip/superstore-sales-dashboard" target="_blank" class="btn btn-sm"
+                 title="View dashboard screenshots and full project write-up">📊 View Project</a>
+              <a href="https://github.com/mayowaphillip/superstore-sales-dashboard" target="_blank" class="btn btn-sm btn-ghost"
+                 title="View source files and README on GitHub">🐙 GitHub</a>
             </div>
           </div>
           <div class="project-body">
@@ -228,13 +393,16 @@
           </div>
         </article>
 
+        <!-- PROJECT 4: Adventure Works Queries -->
         <article class="project-card">
           <div class="project-img">
             <img src="images/projects/project4.png" alt="Adventure Works Queries" onerror="this.parentElement.classList.add('no-img')"/>
             <div class="project-img-placeholder">⚙️</div>
             <div class="project-overlay">
-              <a href="#" class="btn btn-sm">View Project</a>
-              <a href="#" class="btn btn-sm btn-ghost">GitHub</a>
+              <a href="https://github.com/mayowaphillip/adventure-works-SQL-queries" target="_blank" class="btn btn-sm"
+                 title="View SQL scripts and query outputs">📄 View Project</a>
+              <a href="https://github.com/mayowaphillip/adventure-works-SQL-queries" target="_blank" class="btn btn-sm btn-ghost"
+                 title="View source files and README on GitHub">🐙 GitHub</a>
             </div>
           </div>
           <div class="project-body">
@@ -245,13 +413,16 @@
           </div>
         </article>
 
+        <!-- PROJECT 5: HR Intelligence Dashboard -->
         <article class="project-card">
           <div class="project-img">
             <img src="images/projects/project5.png" alt="HR Intelligence Dashboard" onerror="this.parentElement.classList.add('no-img')"/>
             <div class="project-img-placeholder">🧠</div>
             <div class="project-overlay">
-              <a href="https://github.com/mayowaphillip/hr-intelligence-dashboard" target="_blank" class="btn btn-sm">View Project</a>
-              <a href="https://github.com/mayowaphillip/hr-intelligence-dashboard" target="_blank" class="btn btn-sm btn-ghost">GitHub</a>
+              <a href="https://github.com/mayowaphillip/hr-intelligence-dashboard" target="_blank" class="btn btn-sm"
+                 title="View dashboard screenshots and full project write-up">📊 View Project</a>
+              <a href="https://github.com/mayowaphillip/hr-intelligence-dashboard" target="_blank" class="btn btn-sm btn-ghost"
+                 title="View source files and README on GitHub">🐙 GitHub</a>
             </div>
           </div>
           <div class="project-body">
@@ -262,13 +433,16 @@
           </div>
         </article>
 
+        <!-- PROJECT 6: Global Mortality Intelligence Dashboard -->
         <article class="project-card">
           <div class="project-img">
             <img src="images/projects/project6.png" alt="Global Mortality Intelligence Dashboard" onerror="this.parentElement.classList.add('no-img')"/>
             <div class="project-img-placeholder">🌍</div>
             <div class="project-overlay">
-              <a href="#" class="btn btn-sm">View Project</a>
-              <a href="#" class="btn btn-sm btn-ghost">GitHub</a>
+              <a href="https://github.com/mayowaphillip/global-mortality-intelligence" target="_blank" class="btn btn-sm"
+                 title="View dashboard screenshots and full project write-up">📊 View Project</a>
+              <a href="https://github.com/mayowaphillip/global-mortality-intelligence" target="_blank" class="btn btn-sm btn-ghost"
+                 title="View source files and README on GitHub">🐙 GitHub</a>
             </div>
           </div>
           <div class="project-body">
@@ -276,6 +450,26 @@
             <h3>Global Mortality Intelligence Dashboard</h3>
             <p>An 8-page Power BI intelligence solution analysing WHO mortality data across 185 countries, 179 causes of death, and 22 years (2000–2021). Covers cause rankings, country benchmarking, gender mortality inequality, population vs. rate analysis, and data quality transparency — revealing that cardiovascular disease leads globally and Eastern Europe dominates the highest mortality rankings.</p>
             <div class="project-outcome"><span class="outcome-label">Outcome:</span> Converted raw WHO data into a policy-grade global health intelligence tool</div>
+          </div>
+        </article>
+
+        <!-- PROJECT 7: SQL Retail Sales Analysis -->
+        <article class="project-card">
+          <div class="project-img">
+            <img src="images/projects/project7.png" alt="SQL Retail Sales Analysis" onerror="this.parentElement.classList.add('no-img')"/>
+            <div class="project-img-placeholder">🗄️</div>
+            <div class="project-overlay">
+              <a href="https://github.com/mayowaphillip/retail-sales-analysis-SQL-" target="_blank" class="btn btn-sm"
+                 title="View SQL scripts and query outputs">📄 View Project</a>
+              <a href="https://github.com/mayowaphillip/retail-sales-analysis-SQL-" target="_blank" class="btn btn-sm btn-ghost"
+                 title="View source files and README on GitHub">🐙 GitHub</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags"><span>PostgreSQL</span><span>SQL</span><span>Retail Analytics</span></div>
+            <h3>Retail Sales SQL Analysis</h3>
+            <p>Designed and queried a retail transactions database in PostgreSQL to answer 10 real-world business questions — covering sales by category, top customers, gender-based purchasing patterns, shift-level order volumes, and best-selling months across years.</p>
+            <div class="project-outcome"><span class="outcome-label">Outcome:</span> 10 business questions answered with production-ready SQL across a full retail dataset</div>
           </div>
         </article>
 
@@ -362,22 +556,16 @@
 
   <script src="script.js"></script>
   <script>
-    // ── Mobile nav toggle (self-contained fallback) ──────────────────────────
     (function () {
       const toggle = document.getElementById('navToggle');
       const navLinks = document.querySelector('.nav-links');
-
       if (!toggle || !navLinks) return;
-
-      // Open / close on hamburger click
       toggle.addEventListener('click', function (e) {
         e.stopPropagation();
         const isOpen = navLinks.classList.toggle('nav-open');
         toggle.classList.toggle('active', isOpen);
         toggle.setAttribute('aria-expanded', isOpen);
       });
-
-      // Close when a nav link is tapped
       navLinks.querySelectorAll('a').forEach(function (link) {
         link.addEventListener('click', function () {
           navLinks.classList.remove('nav-open');
@@ -385,8 +573,6 @@
           toggle.setAttribute('aria-expanded', false);
         });
       });
-
-      // Close when tapping anywhere outside the nav
       document.addEventListener('click', function (e) {
         if (!navLinks.contains(e.target) && e.target !== toggle) {
           navLinks.classList.remove('nav-open');
@@ -396,12 +582,10 @@
       });
     })();
 
-    // ── Navbar scroll shadow ─────────────────────────────────────────────────
     window.addEventListener('scroll', function () {
       document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
     });
 
-    // ── Stat counter animation ───────────────────────────────────────────────
     document.querySelectorAll('.stat-num').forEach(function (el) {
       const target = +el.getAttribute('data-target');
       let count = 0;
@@ -414,39 +598,5 @@
     });
   </script>
 
-  <style>
-    /* ── Mobile nav open state ─────────────────────────────────────────────── */
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: var(--bg-secondary, #0d1117);
-        padding: 1.5rem 2rem;
-        gap: 1.2rem;
-        border-top: 1px solid rgba(255,255,255,0.08);
-        z-index: 999;
-      }
-      .nav-links.nav-open {
-        display: flex;
-      }
-      /* Animate hamburger → X */
-      .nav-toggle.active span:nth-child(1) {
-        transform: translateY(7px) rotate(45deg);
-      }
-      .nav-toggle.active span:nth-child(2) {
-        opacity: 0;
-      }
-      .nav-toggle.active span:nth-child(3) {
-        transform: translateY(-7px) rotate(-45deg);
-      }
-      .nav-toggle span {
-        transition: transform 0.3s ease, opacity 0.3s ease;
-      }
-    }
-  </style>
 </body>
 </html>
